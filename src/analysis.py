@@ -25,11 +25,10 @@ if __name__ == "__main__":
         for b_size in tqdm(block_sizes, desc='Trying multiple block sizes', position=2):
 
             msg = ''
-            msg = msg.ljust(3000, 'X')
-            b_size = 1000
+            msg = msg.ljust(msg_len*b_size, 'X')
+
             crypty_obj = Crypto(mode=mode, block_size=b_size)
             start = time.time()
-            breakpoint()
             cipher = crypty_obj.encrypt(msg)
             end = time.time()
 
