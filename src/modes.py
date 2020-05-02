@@ -5,7 +5,7 @@ def byte_xor(s1, s2):
 
     return bytes(_a ^ _b for _a, _b in zip(s1, s2))
 
-class Mode():
+class Crypto():
 
     def __init__(
         self,
@@ -160,7 +160,7 @@ if __name__ == "__main__":
 
     s = "HI"
     s = s.zfill(1)
-    obj = Mode(mode="CTR", key=x, block_size=16)
+    obj = Crypto(mode="CTR", key=x, block_size=16)
     breakpoint()
     enc = obj.encrypt(tst)
     dec = obj.decrypt(enc)
