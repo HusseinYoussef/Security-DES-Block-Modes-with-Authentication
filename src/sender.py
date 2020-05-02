@@ -18,8 +18,7 @@ if __name__ == "__main__":
         ctr = "4"
         block_size = "8"
 
-        print("Now Enter the configurations\n")
-        print("Press 1 to skip this and proceed with the default configurations")
+        print("Press 1 to skip this and proceed with the default configurations or press any other key to use your own configurations.")
         
         inp = input()
         val = 0
@@ -29,6 +28,7 @@ if __name__ == "__main__":
             val = 0
         
         if val != 1:
+            print("Now Enter the configurations\n")
             print("\nEnter the mode: ECB, CBC, CFB, CTR")
             inp = input()
             if inp.upper() == 'ECB':

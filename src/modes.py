@@ -33,7 +33,7 @@ class Crypto():
     def encrypt(self, plain_text):
 
         plain_text = plain_text.ljust(len(plain_text)+self.block_size\
-            - (len(plain_text)+self.block_size)%self.block_size, ' ')
+            - (len(plain_text)+self.block_size)%self.block_size, ' ') if len(plain_text) % self.block_size else plain_text
         
         return eval(f'self.encrypt_{self.mode}')(plain_text)
 
