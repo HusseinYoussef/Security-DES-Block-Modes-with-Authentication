@@ -8,7 +8,7 @@ if __name__ == "__main__":
     
     HOST = '127.0.0.1'  # Standard loopback interface address (localhost)
     PORT = 1234        # Port to listen on (non-privileged ports are > 1023)
-
+    buff_size = 2048
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         
         s.bind((HOST, PORT))
@@ -18,7 +18,7 @@ if __name__ == "__main__":
             
             print('Connected by', addr)
             print("\nWaiting for config")
-            config = conn.recv(1024)
+            config = conn.recv(buff_size)
             config = config.decode('cp437')
             if config:
                 msg = 'Server received config successfully: ' + config
@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
                     # Receive Config        
                     print("\nWait for Message\n")
-                    data = conn.recv(1024)
+                    data = conn.recv(buff_size)
                     if not data:
                         break
 
